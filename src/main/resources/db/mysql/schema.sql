@@ -53,3 +53,12 @@ CREATE TABLE IF NOT EXISTS visits (
   description VARCHAR(255),
   FOREIGN KEY (pet_id) REFERENCES pets(id)
 ) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS math_operations (
+                                             id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                                             operation VARCHAR(255),
+  number1 DOUBLE,
+  number2 DOUBLE,
+  result DOUBLE
+  ) engine=InnoDB;
+
