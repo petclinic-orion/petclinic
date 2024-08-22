@@ -50,7 +50,11 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.csrf(csrf -> csrf.disable())
 			.authorizeHttpRequests(authorize -> authorize
-				.requestMatchers("/authenticate").permitAll()  // Permit access to the authentication endpoint
+				.requestMatchers("/authenticate",
+					// Swagger resources
+					"/api-docs/**",
+					"/endpoints.html",
+					"/swagger-ui/**").permitAll()  // Permit access to the authentication endpoint
 				.anyRequest().authenticated()  // All other requests require authentication
 			)
 			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));  // Use stateless session management
