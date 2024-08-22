@@ -23,6 +23,8 @@ import org.springframework.context.annotation.ImportRuntimeHints;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import java.util.Locale;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * PetClinic Spring Boot Application.
@@ -34,7 +36,15 @@ import java.util.Locale;
 @ImportRuntimeHints(PetClinicRuntimeHints.class)
 public class PetClinicApplication {
 
+	private static final Logger logger = LogManager.getLogger(PetClinicApplication.class);
+
 	public static void main(String[] args) {
+
+		logger.info("This is an INFO log message");
+		logger.warn("This is a WARN log message");
+		logger.error("This is an ERROR log message");
+
+
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
 
