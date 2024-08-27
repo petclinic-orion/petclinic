@@ -16,6 +16,8 @@
 
 package org.springframework.samples.petclinic;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -34,6 +36,9 @@ import org.apache.logging.log4j.LogManager;
  */
 @SpringBootApplication
 @ImportRuntimeHints(PetClinicRuntimeHints.class)
+@OpenAPIDefinition(info = @Info(version = "1.0",
+	title = "PetClinicApplication API",
+	description = "All Administration Operations"))
 public class PetClinicApplication {
 
 	private static final Logger logger = LogManager.getLogger(PetClinicApplication.class);
