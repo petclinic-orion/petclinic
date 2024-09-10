@@ -1,7 +1,9 @@
 package org.springframework.samples.petclinic.math;
 
 public class MathRequest {
+
 	private double number1;
+
 	private double number2;
 
 	public double getNumber1() {
@@ -19,4 +21,5 @@ public class MathRequest {
 	public void setNumber2(double number2) {
 		this.number2 = number2;
 	}
+
 }

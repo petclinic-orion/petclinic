@@ -48,7 +48,9 @@ public class MathService {
 
 	public double squareRoot(double number) {
 		double result = Math.sqrt(number);
-		saveOperation("SQUARE_ROOT", number, 0, result);  // İkinci parametre kullanılmadığından 0 veriyoruz.
+		saveOperation("SQUARE_ROOT", number, 0, result); // İkinci parametre
+															// kullanılmadığından 0
+															// veriyoruz.
 		return result;
 	}
 
@@ -56,4 +58,5 @@ public class MathService {
 		MathOperation mathOperation = new MathOperation(operation, number1, number2, result);
 		mathOperationRepository.save(mathOperation);
 	}
+
 }

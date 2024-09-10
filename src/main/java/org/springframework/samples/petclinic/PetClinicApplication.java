@@ -36,9 +36,8 @@ import org.apache.logging.log4j.LogManager;
  */
 @SpringBootApplication
 @ImportRuntimeHints(PetClinicRuntimeHints.class)
-@OpenAPIDefinition(info = @Info(version = "1.0",
-	title = "PetClinicApplication API",
-	description = "All Administration Operations"))
+@OpenAPIDefinition(info = @Info(version = "1.0", title = "PetClinicApplication API",
+		description = "All Administration Operations"))
 public class PetClinicApplication {
 
 	private static final Logger logger = LogManager.getLogger(PetClinicApplication.class);
@@ -48,7 +47,6 @@ public class PetClinicApplication {
 		logger.info("This is an INFO log message");
 		logger.warn("This is a WARN log message");
 		logger.error("This is an ERROR log message");
-
 
 		SpringApplication.run(PetClinicApplication.class, args);
 	}

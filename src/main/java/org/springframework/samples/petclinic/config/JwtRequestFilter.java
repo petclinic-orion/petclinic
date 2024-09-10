@@ -1,11 +1,11 @@
 package org.springframework.samples.petclinic.config;
 
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.samples.petclinic.util.JwtUtil;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -30,7 +30,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
-		throws ServletException, IOException {
+			throws ServletException, IOException {
 
 		final String authorizationHeader = request.getHeader("Authorization");
 
@@ -46,12 +46,12 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 			UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 			if (jwtUtil.validateToken(jwt, userDetails.getUsername())) {
 				UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-					userDetails, null, userDetails.getAuthorities());
+						userDetails, null, userDetails.getAuthorities());
 				SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 			}
 		}
 
 		chain.doFilter(request, response);
 	}
-}
 
+}

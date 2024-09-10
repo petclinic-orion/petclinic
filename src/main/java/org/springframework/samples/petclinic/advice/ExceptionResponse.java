@@ -1,14 +1,20 @@
 package org.springframework.samples.petclinic.advice;
+
 import java.time.LocalDateTime;
 
 public class ExceptionResponse {
+
 	private String error;
+
 	private String message;
+
 	private int status;
+
 	private LocalDateTime timestamp;
 
 	// Constructors
-	public ExceptionResponse() {}
+	public ExceptionResponse() {
+	}
 
 	public ExceptionResponse(String error, String message, int status, LocalDateTime timestamp) {
 		this.error = error;
@@ -50,4 +56,5 @@ public class ExceptionResponse {
 	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
 	}
+
 }

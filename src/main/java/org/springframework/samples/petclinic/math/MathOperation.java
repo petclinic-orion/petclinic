@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.math;
 
-
 import jakarta.persistence.*;
 
 @Entity
@@ -12,12 +11,16 @@ public class MathOperation {
 	private Long id;
 
 	private String operation;
+
 	private double number1;
+
 	private double number2;
+
 	private double result;
 
 	// Constructors
-	public MathOperation() {}
+	public MathOperation() {
+	}
 
 	public MathOperation(String operation, double number1, double number2, double result) {
 		this.operation = operation;
@@ -67,4 +70,5 @@ public class MathOperation {
 	public void setResult(double result) {
 		this.result = result;
 	}
+
 }

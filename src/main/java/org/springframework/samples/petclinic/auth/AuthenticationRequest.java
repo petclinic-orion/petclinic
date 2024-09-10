@@ -1,9 +1,9 @@
 package org.springframework.samples.petclinic.auth;
 
-
 public class AuthenticationRequest {
 
 	private String username;
+
 	private String password;
 
 	// Getters and Setters
@@ -22,5 +22,5 @@ public class AuthenticationRequest {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-}
 
+}
